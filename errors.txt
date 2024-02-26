@@ -1,0 +1,22 @@
+PS C:\Users\nd59\OneDrive - DXC Production\Desktop\Automated Lambda Testing\change_mgmt> python .\test_lambda.py -v
+test_get_access_token_failure (__main__.TestMainCode.test_get_access_token_failure) ... ok
+test_get_access_token_success (__main__.TestMainCode.test_get_access_token_success) ... ok
+test_get_change_data_failure (__main__.TestMainCode.test_get_change_data_failure) ... ok
+test_get_change_data_success (__main__.TestMainCode.test_get_change_data_success) ... Headers - {'Authorization': 'Bearer mocked_token', 'Content-Type': 'application/json'} and Params - {'sysparm_display_value': 'true', 'sysparm_fields': 'number,short_description,type,u_environment,state,start_date,end_date,close_code,business_service,u_outage_indicator,parent,priority,cab_date,cab_required,closed_at,cmdb_ci,service_offering,urgency,justification,implementation_plan,risk_impact_analysis,backout_plan,test_plan,work_start,work_end,business_service.parent,business_service.parent.parent', 'sysparm_limit': 100, 'sysparm_offset': 0, 'sysparm_query': 'start_dateBETWEEN2023-11-28 07:51:44.673875+01:00@2024-02-26 07:51:44.673875+01:00%252000:00:00@23:59:59%2520ORDERBYsys_updated_on:desc'}
+URL - <MagicMock name='get().url' id='2187216943872'>
+Response Received - <MagicMock name='get()' id='2187226298464'>
+ok
+test_get_change_data_success_url (__main__.TestMainCode.test_get_change_data_success_url) ... ok
+test_parse_data (__main__.TestMainCode.test_parse_data) ... Error in parse_data block: 'business_service.parent.parent'
+FAIL
+
+======================================================================
+FAIL: test_parse_data (__main__.TestMainCode.test_parse_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\nd59\OneDrive - DXC Production\Desktop\Automated Lambda Testing\change_mgmt\test_lambda.py", line 63, in test_parse_data
+    self.assertEqual(result, expected_result)
+AssertionError: None != [{'change_id': '123', 'Service': 'SampleS[181 chars]ge'}]
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
