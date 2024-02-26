@@ -1,0 +1,5 @@
+pytest
+pylint
+coverage
+moto
+pytz
