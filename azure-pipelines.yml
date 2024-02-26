@@ -29,7 +29,7 @@ stages:
       displayName: 'Install dependencies'
 
     - script: |
-        python -m unittest discover tests
+        python -m unittest discover tests -v
       displayName: 'Run Python Tests'
   
 
